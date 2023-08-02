@@ -13,7 +13,13 @@ void main() {
 """);
   while (true) {
     String? input = stdin.readLineSync();
-    int n = int.parse(input!);
+     int? n;
+    try {
+      n = int.parse(input!);
+    } catch (e) {
+      print("wrong input !!");
+      n = 6;
+    }
     switch (n) {
       case 1:
         TaskManager.addNewTask();
